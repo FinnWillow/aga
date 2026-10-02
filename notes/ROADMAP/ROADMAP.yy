@@ -1,0 +1,12 @@
+{
+  "$GMNotes":"v1",
+  "%Name":"ROADMAP",
+  "name":"ROADMAP",
+  "parent":{
+    "name":"Notes",
+    "path":"folders/Notes.yy",
+  },
+  "resourceType":"GMNotes",
+  "resourceVersion":"2.0",
+  "shouldOpenOnLoad":true,
+}

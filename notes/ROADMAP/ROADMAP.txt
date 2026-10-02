@@ -1,0 +1,57 @@
+# AGA: roadmap
+
+  Rule: build systems in the order the vertical slice needs them.
+  The slice (end of Phase 2) proves the game is fun before anything else gets built.
+  Effort: S = days, M = 1–2 weeks, L = several weeks.
+
+  ## Phase 0: decisions
+  - [x] Move speed: 2 px/frame (4 for testing)
+  - [x] Screen: 4:3, view 640×480 at zoom 0.5 (320×240 of world visible)
+
+  ## Phase 1: foundation
+  - [x] Movement + collision
+  - [ ] Camera: add cursor lean, screen shake (S)
+  - [ ] Input layer: named actions, rebindable, keyboard + mouse; gamepad later (S)
+  - [ ] Pixel-perfect rendering + scaling (S)
+  - [ ] Game states: playing / paused / menu / journal / dead (S)
+  - [ ] Depth: y-sorting (S)
+  - [ ] Debug tools in the sandbox room: debug overlay, spawn keys, god mode, hitbox view (S)
+
+  ## Phase 2: vertical slice
+  - [ ] Mouse aiming + aim-based facing (S)
+  - [ ] Data-driven weapon system: pistol, then shotgun (M)
+  - [ ] Projectiles + hitbox/hurtbox damage with teams and i-frames (M)
+  - [ ] Health, damage, death, respawn (S)
+  - [ ] Hit feedback: hitstop, flash, knockback, shake, particles (S)
+  - [ ] Enemy base + state machine; flower monster; mp_grid pathfinding (M)
+  - [ ] Pickups + drops: ammo, health (S)
+  - [ ] Basic HUD + crosshair (S)
+  - [ ] Placeholder sound manager (S)
+  - [ ] MILESTONE: one room, pistol + shotgun, flower monsters, door kick. Is it fun?
+
+  ## Phase 3: game structure
+  - [ ] Rooms + transitions: doors (kick), spawn points, per-room memory (M)
+  - [ ] Save/load: async in play, sync on Game End, temp + rename, backup (M)
+  - [ ] Tilemaps + tile collision, auto-tiling, water (M)
+  - [ ] Interactables: notes, switches, workbench (S)
+  - [ ] Journal: bestiary + lore notes (M)
+  - [ ] Text / dialogue box (S)
+  - [ ] Menus: main, pause, settings (volume, resolution, rebinding) (M)
+
+  ## Phase 4: progression
+  - [ ] Ability gates (e.g. chainsaw cuts vines) (M)
+  - [ ] Workbench weapon upgrades (M)
+  - [ ] Map / minimap (L)
+  - [ ] Weapon switching (replaces the 35-slot inventory?) (S)
+  - [ ] More weapons, mostly data + art (S each)
+  - [ ] Throwables: grenades (S)
+  - [ ] Melee: chainsaw (M)
+
+  ## Phase 5: big and risky
+  - [ ] Story flags + cutscenes (Sequences) (M)
+  - [ ] Bosses (L each)
+  - [ ] Music manager: crossfades, per-area tracks (S)
+  - [ ] Vehicles: one scripted moment until everything else is done (L)
+
+
+ya

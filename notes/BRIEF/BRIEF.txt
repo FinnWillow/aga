@@ -1,0 +1,81 @@
+# AGA: project brief
+*Working title. Remake of "Another Generic Adventure" (GMS 1.4) in GameMaker LTS 2026.*
+
+## Why this remake exists
+The original was my most complete game, but it had no sound, music, story or real
+gameplay. I kept building systems "so I could make the game later". When I finally
+tried to build a large level, the code couldn't run it, it lagged badly, and I lost
+the motivation. **Lesson: make the game fun first; systems serve the game, not the
+other way around.** Keep a sandbox test room for the whole project. Never delete it.
+
+## Premise
+A forest deity has stayed passive for ages, and plants were passive because their
+ruler was. Humanity has now passed the point of no return on climate damage: even if
+everything stopped today, mass extinction is locked in. So the deity stopped waiting.
+Plants turn into monsters and kill humans. Example: the flower monster looks like a
+flower, then transforms when you get close.
+
+**Why now?** Because it's too late. Patience only made sense while there was
+something left to save.
+
+## The protagonist
+- An adult who decided humans are crap and moved alone into the forest. They know 
+living truly alone is hard; they don't care.
+- Takes no bullshit from anyone: people, life, or the forest. Attacked by plants,
+they grab a gun and go in guns blazing.
+- **Gender and identity are never revealed.** The hat hides the eyes, including in
+any higher-res portrait. Who they are doesn't matter; what they do does.
+- **They make mistakes, fail, and live with the consequences.** Their flaws come from
+their own belief that they need nobody.
+- **Their choice to leave humanity is neither right nor wrong.** Maybe they could
+have saved lives; maybe they'd have died like everyone else. The game never
+answers this. Hint at both sides and let the player decide.
+- **They mirror the deity:** both judged humanity and turned away from it, one by
+staying out of it, the other by lashing out. The MC probably agrees with the
+deity's diagnosis and refuses to be one of its victims.
+- Signature flourish: kicks open every door they go through (sprite, sound, a little
+screen shake). Flavour only, never a mechanic, and it must be quick.
+
+## Setting and tone
+- Modern day, around 2016–2026. Starts looking Pokémon-like and cozy, then becomes
+unhinged action: pistols, shotguns, grenades, chainsaws, cars.
+- The world shows the damage: higher water levels, submerged cars and buildings,
+notes about extinct species, peoples and places erased from the map.
+- **Tone rule:** the action is fun; the world is quietly tragic. Show the heavy
+material through environment and notes, never lecture. The MC reacts in a few
+dry words at most. (A submerged car with a child seat says more than any text.)
+
+## Gameplay pillars
+1. **GBA/Pokémon-inspired top-down shooter for PC**: move with the keyboard, aim with
+the mouse.
+2. **Guns blazing is rewarded.** Playing well and playing in character should be the
+same thing (e.g. health or ammo from kills, bonuses for staying aggressive,
+Doom Eternal-style).
+3. **Progression:** Metroid-style abilities that open new paths, plus Dead
+Space-style weapon upgrades at a workbench.
+4. **Journal:** the old bestiary book grows into the MC's journal: monster entries
+plus notes about the lost world.
+
+## Decisions made so far
+- Saving: async saves during play; one quick synchronous save in the Game End event
+for any kind of close. Write to a temp file, then rename. Keep a backup save and
+fall back to it if the main save won't load.
+- Camera: a dedicated camera object, updated in End Step; lerp-follows a target
+with look-ahead, zoom, and a one-frame snap flag. Any instance can be a target.
+- Player: movement normalized on diagonals; animation driven by actual movement;
+keeps its facing while that's still valid.
+- Window resizing stays enabled. Dragging the edge is slow on KDE Wayland; that's a
+GameMaker runner issue, accepted.
+
+## Open decisions
+- Internal resolution: 240×160 (GBA, recommended for mouse aiming) vs current 640×480.
+- Move speed: currently 4 px/frame (the original was 2).
+- What happens to the original's 35-slot inventory? A shooter may only need a
+weapon wheel plus key items.
+- Story beats, ending, music direction.
+- Redo the tileset: one forest area first, small palette, Aseprite tilemap mode.
+
+## Reference
+- Original assets and design doc: `~/Desktop/Another Generic Adventure - Asset Pack/`
+(`GAME_DESIGN.md`). The original GMS 1.4 project:
+`/mnt/storage/Repositories/GameMaker-1.49/Another Generic Adventure.gmx`.
