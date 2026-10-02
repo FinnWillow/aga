@@ -2,6 +2,7 @@
   "$GMNotes":"v1",
   "%Name":"ROADMAP",
   "name":"ROADMAP",
+  "openedOnFirstLoad":true,
   "parent":{
     "name":"Notes",
     "path":"folders/Notes.yy",
