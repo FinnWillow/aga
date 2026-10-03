@@ -30,8 +30,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"Sprites",
-    "path":"folders/Sprites.yy",
+    "name":"camera",
+    "path":"folders/Sprites/camera.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
