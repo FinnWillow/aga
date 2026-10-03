@@ -1,4 +1,4 @@
-enum MoveDir {
+enum MOVE_DIR {
     UP,
     DOWN,
     LEFT,

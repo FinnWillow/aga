@@ -47,21 +47,21 @@ if (coord_diff.length() == 0) {
     }
     
     // keep the current facing while we're still moving that way
-    var still_valid  = (last_move == MoveDir.UP    && coord_diff.y < 0)
-                    || (last_move == MoveDir.DOWN  && coord_diff.y > 0)
-                    || (last_move == MoveDir.LEFT  && coord_diff.x < 0)
-                    || (last_move == MoveDir.RIGHT && coord_diff.x > 0)
+    var still_valid  = (last_move == MOVE_DIR.UP    && coord_diff.y < 0)
+                    || (last_move == MOVE_DIR.DOWN  && coord_diff.y > 0)
+                    || (last_move == MOVE_DIR.LEFT  && coord_diff.x < 0)
+                    || (last_move == MOVE_DIR.RIGHT && coord_diff.x > 0)
     
     // otherwise pick a new one; only one branch can run
     if (!still_valid) {
         if (coord_diff.y < 0) {
-            last_move = MoveDir.UP
+            last_move = MOVE_DIR.UP
         } else if (coord_diff.y > 0) {
-            last_move = MoveDir.DOWN
+            last_move = MOVE_DIR.DOWN
         } else if (coord_diff.x < 0) {
-            last_move = MoveDir.LEFT
+            last_move = MOVE_DIR.LEFT
         } else if (coord_diff.x > 0) {
-            last_move = MoveDir.RIGHT
+            last_move = MOVE_DIR.RIGHT
         }
     }
     

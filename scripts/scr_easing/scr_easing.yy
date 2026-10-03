@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"Timer",
+  "%Name":"scr_easing",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"Timer",
+  "name":"scr_easing",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",

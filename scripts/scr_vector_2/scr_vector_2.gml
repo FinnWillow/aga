@@ -1,4 +1,4 @@
-function Vector2(_x = 0, _y = 0) constructor {
+function scr_vector_2(_x = 0, _y = 0) constructor {
     x = _x;
     y = _y;
     
@@ -8,27 +8,27 @@ function Vector2(_x = 0, _y = 0) constructor {
     }
     
     static adds = function (_vec2) {
-        return new Vector2(x + _vec2.x, y + _vec2.y);
+        return new scr_vector_2(x + _vec2.x, y + _vec2.y);
     }
     
     static subs = function (_vec2) {
-        return new Vector2(x- _vec2.x, y - _vec2.y);
+        return new scr_vector_2(x- _vec2.x, y - _vec2.y);
     }
     
     static muls = function (_vec2) {
-        return new Vector2(x * _vec2.x, y * _vec2.y);
+        return new scr_vector_2(x * _vec2.x, y * _vec2.y);
     }
     
     static divs = function (_vec2) {
-        return new Vector2(x / _vec2.x, y / _vec2.y);
+        return new scr_vector_2(x / _vec2.x, y / _vec2.y);
     }
     
     static scale = function (mag) {
-        return new Vector2(x * mag, y * mag);
+        return new scr_vector_2(x * mag, y * mag);
     }
     
     static cpy = function () {
-        return new Vector2(x, y);
+        return new scr_vector_2(x, y);
     }
     
     static dist = function (_vec2) {
@@ -42,9 +42,9 @@ function Vector2(_x = 0, _y = 0) constructor {
     static nor = function () {
         var len = length();
         if (len == 0) {
-            return new Vector2();
+            return new scr_vector_2();
         }
         
-        return new Vector2(x / len, y / len);
+        return new scr_vector_2(x / len, y / len);
     }
 }

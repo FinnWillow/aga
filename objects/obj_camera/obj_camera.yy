@@ -12,7 +12,10 @@
     "name":"Objects",
     "path":"folders/Objects.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_palletted",
+    "path":"objects/obj_palletted/obj_palletted.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -35,5 +38,5 @@
     "path":"sprites/spr_cam/spr_cam.yy",
   },
   "spriteMaskId":null,
-  "visible":false,
+  "visible":true,
 }

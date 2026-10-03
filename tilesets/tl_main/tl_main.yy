@@ -2,7 +2,7 @@
   "$GMTileSet":"v1",
   "%Name":"tl_main",
   "autoTileSets":[
-    {"$GMAutoTileSet":"","%Name":"gras to _","closed_edge":false,"name":"gras to _","resourceType":"GMAutoTileSet","resourceVersion":"2.0","tiles":[33,52,51,17,36,32,53,16,35,54,34,18,49,48,50,81,],},
+    {"$GMAutoTileSet":"","%Name":"gras to _","closed_edge":false,"name":"gras to _","resourceType":"GMAutoTileSet","resourceVersion":"2.0","tiles":[33,52,51,17,36,32,53,16,35,37,34,18,49,48,50,0,],},
   ],
   "macroPageTiles":{
     "SerialiseHeight":0,

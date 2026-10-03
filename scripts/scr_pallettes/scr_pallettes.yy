@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"Easing",
+  "%Name":"scr_pallettes",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"Easing",
+  "name":"scr_pallettes",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",

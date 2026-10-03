@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"MOVE_DIR",
+  "%Name":"scr_timer",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"MOVE_DIR",
+  "name":"scr_timer",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",

@@ -5,7 +5,7 @@
 global.default_fscn_state = true
 global.can_shutdown = false
 global.overr_shutdown_timr = false
-
+global.u_pallette_handle = shader_get_uniform(sha_pallette, "u_pallette");
 
 // player
 global.player_move_speed = 2

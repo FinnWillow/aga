@@ -1,8 +1,8 @@
-coord = new Vector2(x, y)
-move_dir = new Vector2(0, 0)
-move_spd = new Vector2(0, 0)
+coord = new scr_vector_2(x, y)
+move_dir = new scr_vector_2(0, 0)
+move_spd = new scr_vector_2(0, 0)
 has_moved = false
-last_move = MoveDir.DOWN;
+last_move = MOVE_DIR.DOWN;
 
 player_sprites = [
     spr_player_up,
@@ -13,3 +13,4 @@ player_sprites = [
 
 obj_camera.target = id
 obj_camera.snap = true
+
