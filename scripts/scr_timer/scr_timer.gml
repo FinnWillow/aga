@@ -1,4 +1,4 @@
-function scr_timer(_cicle) constructor {
+function Timer(_cicle) constructor {
     cicle = _cicle;
     timer = 0;
     
