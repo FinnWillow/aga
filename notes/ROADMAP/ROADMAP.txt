@@ -1,21 +1,28 @@
-# AGA: roadmap
+  # AGA: roadmap
 
   Rule: build systems in the order the vertical slice needs them.
   The slice (end of Phase 2) proves the game is fun before anything else gets built.
   Effort: S = days, M = 1–2 weeks, L = several weeks.
+  [x] done · [ ] *partial* · [ ] not started
 
   ## Phase 0: decisions
   - [x] Move speed: 2 px/frame (4 for testing)
-  - [x] Screen: 4:3, view 640×480 at zoom 0.5 (320×240 of world visible)
+  - [x] Screen: 4:3, view 640×480 at zoom 1.0
+  - [x] Colour: art drawn in 4 grey "slots" (0/85/170/255), coloured in game by palettes; slots ordered dark to light in every palette
+  - [x] Elevation: levels 0–6, objects draw over their own level and the next one up
+  - [x] No real hidden passages; fake them with cover layers / triggers when needed
 
   ## Phase 1: foundation
-  - [x] Movement + collision
-  - [ ] Camera: add cursor lean, screen shake (S)
-  - [ ] Input layer: named actions, rebindable, keyboard + mouse; gamepad later (S)
-  - [ ] Pixel-perfect rendering + scaling (S)
+  - [x] Movement: normalized diagonals, facing kept while valid, animation from actual movement
+  - [x] Tile collision: generated from tileset_collisions.png (masks + debug outlines), per level (own level + the one above), corner correction / diagonal sliding, unstuck safety net, feet-sized masks
+  - [x] Palette system: palette shader, per-object (obj_palletted) and per-layer (from layer name)
+  - [x] Depth: y-sorting with depth bands per level
+  - [x] Ramps: level decided by position on the ramp
+  - [ ] *partial* Camera: follow, look-ahead, zoom, snap done; cursor lean + screen shake to do (S)
+  - [ ] *partial* Input layer: keys in globals; named actions, rebinding, mouse to do (S)
+  - [ ] Pixel-perfect rendering + scaling: sprites still drift sub-pixel (draw at rounded positions), integer window scaling (S)
   - [ ] Game states: playing / paused / menu / journal / dead (S)
-  - [ ] Depth: y-sorting (S)
-  - [ ] Debug tools in the sandbox room: debug overlay, spawn keys, god mode, hitbox view (S)
+  - [ ] *partial* Debug tools: rm_sandbox + collision outlines done; debug overlay, palette colour pickers, spawn keys, god mode, hitbox view to do (S)
 
   ## Phase 2: vertical slice
   - [ ] Mouse aiming + aim-based facing (S)
@@ -32,7 +39,7 @@
   ## Phase 3: game structure
   - [ ] Rooms + transitions: doors (kick), spawn points, per-room memory (M)
   - [ ] Save/load: async in play, sync on Game End, temp + rename, backup (M)
-  - [ ] Tilemaps + tile collision, auto-tiling, water (M)
+  - [ ] *partial* Tilemaps: layers, palettes, collision and levels done; auto-tiling, water to do (M)
   - [ ] Interactables: notes, switches, workbench (S)
   - [ ] Journal: bestiary + lore notes (M)
   - [ ] Text / dialogue box (S)
@@ -53,5 +60,18 @@
   - [ ] Music manager: crossfades, per-area tracks (S)
   - [ ] Vehicles: one scripted moment until everything else is done (L)
 
+  ## Art and pipeline
+  - [x] Aseprite workflow: indexed mode, grey index palette + preview palettes, strip export
+  - [x] First tileset: grass, dirt, stone, plateaus (2 levels) + collision image
+  - [x] Git + GitHub sync between desktop and laptop
+  - [ ] *partial* Redraw player and other sprites in the 4-slot style; only player done + new tileset. look at the aga old spriteset.
+  - [ ] Water tiles + water palette
 
-ya
+  ## Conventions (keep these consistent)
+  - Tile layer names: `<palette>_<anything>_l<level>`
+    - first word = palette name (from scr_pallettes); `index` = no palette (shadows)
+    - last word = level (`l0`…`l6`); no suffix = level 0
+  - Collision: white in tileset_collisions.png = solid, same grid as tileset.png;
+    don't mirror/rotate tiles that have collision
+  - Sorting objects inherit obj_sorted (draw_level = level they stand on);
+    palette objects inherit obj_palletted
