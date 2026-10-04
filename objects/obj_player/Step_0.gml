@@ -1,8 +1,8 @@
 // -------- state
-var move_forward = keyboard_check(global.key_move_forward)
-var move_backward = keyboard_check(global.key_move_backward)
-var move_leftward = keyboard_check(global.key_move_leftward)
-var move_rightward = keyboard_check(global.key_move_rightward)
+var move_forward =   keymap_check(global.keymap.move_forward)
+var move_backward =  keymap_check(global.keymap.move_backward)
+var move_leftward =  keymap_check(global.keymap.move_leftward)
+var move_rightward = keymap_check(global.keymap.move_rightward)
 
 move_dir.set(
     move_rightward - move_leftward, // x+ = right; x- = left; left = 0 - 1. right = 1 - 0

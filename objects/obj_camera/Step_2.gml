@@ -35,6 +35,8 @@ var new_x = lerp(view_x, goto_x, snap || fixed ? 1 : 0.1)
 var new_y = lerp(view_y, goto_y, snap || fixed ? 1 : 0.1)
 camera_set_view_pos(cam_0, new_x, new_y)
 
+// 
+
 // snap is a "one frame" trigger to position and zoom the camera without
 // lerp. if you want to use it to disable the lerp for longer, use the
 // "fixed" flag.
