@@ -11,54 +11,73 @@
   - [x] Colour: art drawn in 4 grey "slots" (0/85/170/255), coloured in game by palettes; slots ordered dark to light in every palette
   - [x] Elevation: levels 0–6, objects draw over their own level and the next one up
   - [x] No real hidden passages; fake them with cover layers / triggers when needed
+  - [x] Inventory model: weapons/tools are unlocks; stackable items one slot each (~99); small inventory
+  - [ ] Scarcity split: which resources are scarce (supplies, materials) vs generous (combat drops)
+  - [ ] Killable NPCs: essential NPCs, or a "quest-giver dead" outcome for every quest
+  - [ ] Event clock: real time, in-game days, or per-quest timers
+  - [ ] Survival needs: hunger / other needs, or food only as healing / trade goods
 
   ## Phase 1: foundation
   - [x] Movement: normalized diagonals, facing kept while valid, animation from actual movement
-  - [x] Tile collision: generated from tileset_collisions.png (masks + debug outlines), per level (own level + the one above), corner correction / diagonal sliding, unstuck safety net, feet-sized masks
+  - [x] Tile collision: generated from tileset_collisions.png (masks + debug outlines), per level (own level + the one above), corner correction /
+  diagonal sliding, unstuck safety net, feet-sized masks
   - [x] Palette system: palette shader, per-object (obj_palletted) and per-layer (from layer name)
   - [x] Depth: y-sorting with depth bands per level
   - [x] Ramps: level decided by position on the ramp
+  - [x] Input layer: named actions in global.keymap (keyboard, mouse, wheel); rebinding menu in Phase 3
   - [ ] *partial* Camera: follow, look-ahead, zoom, snap done; cursor lean + screen shake to do (S)
-  - [ ] *partial* Input layer: keys in globals; named actions, rebinding, mouse to do (S)
   - [ ] Pixel-perfect rendering + scaling: sprites still drift sub-pixel (draw at rounded positions), integer window scaling (S)
-  - [ ] Game states: playing / paused / menu / journal / dead (S)
-  - [ ] *partial* Debug tools: rm_sandbox + collision outlines done; debug overlay, palette colour pickers, spawn keys, god mode, hitbox view to do (S)
+  - [ ] Game states: playing / paused / menu / inventory / journal / dead (S)
+  - [ ] *partial* Debug tools: rm_sandbox + collision outlines done; debug overlay, palette colour pickers to do (S). Spawn keys, god mode, hitbox
+  view, give-item keys come with Phase 2
 
-  ## Phase 2: vertical slice
+  ## Phase 2: vertical slice (combat + survival loop)
   - [ ] Mouse aiming + aim-based facing (S)
-  - [ ] Data-driven weapon system: pistol, then shotgun (M)
+  - [ ] Data-driven weapon system: pistol, then shotgun; ammo types as items (M)
   - [ ] Projectiles + hitbox/hurtbox damage with teams and i-frames (M)
   - [ ] Health, damage, death, respawn (S)
   - [ ] Hit feedback: hitstop, flash, knockback, shake, particles (S)
   - [ ] Enemy base + state machine; flower monster; mp_grid pathfinding (M)
-  - [ ] Pickups + drops: ammo, health (S)
-  - [ ] Basic HUD + crosshair (S)
+  - [ ] Item database: ID → name, sprite, stack size, value, use (S)
+  - [ ] Inventory: small, stackable slots; pick up, drop, use (M)
+  - [ ] Pickups + drops: ammo, health, materials (S)
+  - [ ] One gatherable resource: chop trees for wood (S)
+  - [ ] One trader: buy ammo, sell wood (S)
+  - [ ] Basic HUD + crosshair + inventory bar (S)
   - [ ] Placeholder sound manager (S)
-  - [ ] MILESTONE: one room, pistol + shotgun, flower monsters, door kick. Is it fun?
+  - [ ] MILESTONE: one area, pistol + shotgun, flower monsters, chop wood, trade it for ammo. Is the loop fun?
 
   ## Phase 3: game structure
-  - [ ] Rooms + transitions: doors (kick), spawn points, per-room memory (M)
+  - [ ] Rooms + transitions: doors, spawn points, per-room memory (M)
   - [ ] Save/load: async in play, sync on Game End, temp + rename, backup (M)
   - [ ] *partial* Tilemaps: layers, palettes, collision and levels done; auto-tiling, water to do (M)
-  - [ ] Interactables: notes, switches, workbench (S)
+  - [ ] NPCs: base object, alive/dead state that persists, essential flag (M)
+  - [ ] Text / dialogue box; dialogue that can vary by flags (S)
+  - [ ] Quests: objectives, required items, success / failure outcomes (M)
+  - [ ] Event clock: world events that progress whether the player is there or not (M)
+  - [ ] Interactables: notes, switches, workbench, storage containers (S)
   - [ ] Journal: bestiary + lore notes (M)
-  - [ ] Text / dialogue box (S)
   - [ ] Menus: main, pause, settings (volume, resolution, rebinding) (M)
 
-  ## Phase 4: progression
-  - [ ] Ability gates (e.g. chainsaw cuts vines) (M)
+  ## Phase 4: survival and progression
+  - [ ] Gathering: scavenging buildings, woods, water; resource respawn rules (M)
+  - [ ] Hunting: animals with flee / wander AI, drops (M)
+  - [ ] Shops across places: different stock and prices per location (S)
   - [ ] Workbench weapon upgrades (M)
+  - [ ] Ability gates (e.g. chainsaw cuts vines) (M)
   - [ ] Map / minimap (L)
-  - [ ] Weapon switching (replaces the 35-slot inventory?) (S)
+  - [ ] Weapon / tool switching from unlocks (S)
   - [ ] More weapons, mostly data + art (S each)
   - [ ] Throwables: grenades (S)
   - [ ] Melee: chainsaw (M)
 
   ## Phase 5: big and risky
-  - [ ] Story flags + cutscenes (Sequences) (M)
+  - [ ] Vehicles: driving + limited storage (bike, motorcycle, car) (L)
+  - [ ] Story flags + cutscenes (Sequences); Frost's dialogue per route (M)
+  - [ ] The opening: tree, village, selling, the attack (needs most systems) (L)
   - [ ] Bosses (L each)
+  - [ ] The deity: final encounter, kill route (boss) and reason route; both endings (L)
   - [ ] Music manager: crossfades, per-area tracks (S)
-  - [ ] Vehicles: one scripted moment until everything else is done (L)
 
   ## Art and pipeline
   - [x] Aseprite workflow: indexed mode, grey index palette + preview palettes, strip export

@@ -1,81 +1,168 @@
-# AGA: project brief
-*Working title. Remake of "Another Generic Adventure" (GMS 1.4) in GameMaker LTS 2026.*
+  # AGA: project brief
+  **Another Generic Adventure: where plants have gone berserk and you need to figure out why!**
+  Short: *AGA: Plants*, or just *AGA*. Remake of "Another Generic Adventure" (GMS 1.4)
+  in GameMaker LTS 2026.
 
-## Why this remake exists
-The original was my most complete game, but it had no sound, music, story or real
-gameplay. I kept building systems "so I could make the game later". When I finally
-tried to build a large level, the code couldn't run it, it lagged badly, and I lost
-the motivation. **Lesson: make the game fun first; systems serve the game, not the
-other way around.** Keep a sandbox test room for the whole project. Never delete it.
+  ## Why this remake exists
+  The original was my most complete game, but it had no sound, music, story or real
+  gameplay. I kept building systems "so I could make the game later". When I finally
+  tried to build a large level, the code couldn't run it, it lagged badly, and I lost
+  the motivation. **Lesson: make the game fun first; systems serve the game, not the
+  other way around.** Keep a sandbox test room for the whole project. Never delete it.
 
-## Premise
-A forest deity has stayed passive for ages, and plants were passive because their
-ruler was. Humanity has now passed the point of no return on climate damage: even if
-everything stopped today, mass extinction is locked in. So the deity stopped waiting.
-Plants turn into monsters and kill humans. Example: the flower monster looks like a
-flower, then transforms when you get close.
+  ## The title
+  - "Another Generic Adventure" is free on both Steam and itch.io.
+  - The subtitle is the joke and the premise at once. It also works as a series
+    template: e.g. "Another Generic Adventure: where zombies infect the lands and you
+    need to figure out why, again!"
 
-**Why now?** Because it's too late. Patience only made sense while there was
-something left to save.
+  ## Premise
+  A forest deity has stayed passive for ages, and plants were passive because their
+  ruler was. Humanity has now passed the point of no return on climate damage: even if
+  everything stopped today, mass extinction is locked in. So the deity stopped waiting.
+  Plants turn into monsters and kill humans. Example: the flower monster looks like a
+  flower, then transforms when you get close.
 
-## The protagonist
-- An adult who decided humans are crap and moved alone into the forest. They know 
-living truly alone is hard; they don't care.
-- Takes no bullshit from anyone: people, life, or the forest. Attacked by plants,
-they grab a gun and go in guns blazing.
-- **Gender and identity are never revealed.** The hat hides the eyes, including in
-any higher-res portrait. Who they are doesn't matter; what they do does.
-- **They make mistakes, fail, and live with the consequences.** Their flaws come from
-their own belief that they need nobody.
-- **Their choice to leave humanity is neither right nor wrong.** Maybe they could
-have saved lives; maybe they'd have died like everyone else. The game never
-answers this. Hint at both sides and let the player decide.
-- **They mirror the deity:** both judged humanity and turned away from it, one by
-staying out of it, the other by lashing out. The MC probably agrees with the
-deity's diagnosis and refuses to be one of its victims.
-- Signature flourish: kicks open every door they go through (sprite, sound, a little
-screen shake). Flavour only, never a mechanic, and it must be quick.
+  **Why now?** Because it's too late. Patience only made sense while there was
+  something left to save.
 
-## Setting and tone
-- Modern day, around 2016–2026. Starts looking Pokémon-like and cozy, then becomes
-unhinged action: pistols, shotguns, grenades, chainsaws, cars.
-- The world shows the damage: higher water levels, submerged cars and buildings,
-notes about extinct species, peoples and places erased from the map.
-- **Tone rule:** the action is fun; the world is quietly tragic. Show the heavy
-material through environment and notes, never lecture. The MC reacts in a few
-dry words at most. (A submerged car with a child seat says more than any text.)
+  ## The protagonist: Frost
+  - An adult who decided humans are crap and moved alone into the forest. They know
+    living truly alone is hard; they don't care.
+  - Takes no bullshit from anyone: people, life, or the forest. Attacked by plants,
+    they grab a gun and go in guns blazing.
+  - **Gender and identity are never revealed.** The hat hides the eyes, including in
+    any higher-res portrait. Who they are doesn't matter; what they do does.
+  - **They make mistakes, fail, and live with the consequences.** Their flaws come from
+    their own belief that they need nobody.
+  - **Their choice to leave humanity is neither right nor wrong.** Maybe they could
+    have saved lives; maybe they'd have died like everyone else. The game never
+    answers this. Hint at both sides and let the player decide.
+  - **They mirror the deity:** both judged humanity and turned away from it, one by
+    staying out of it, the other by lashing out. Frost probably agrees with the
+    deity's diagnosis and refuses to be one of its victims.
 
-## Gameplay pillars
-1. **GBA/Pokémon-inspired top-down shooter for PC**: move with the keyboard, aim with
-the mouse.
-2. **Guns blazing is rewarded.** Playing well and playing in character should be the
-same thing (e.g. health or ammo from kills, bonuses for staying aggressive,
-Doom Eternal-style).
-3. **Progression:** Metroid-style abilities that open new paths, plus Dead
-Space-style weapon upgrades at a workbench.
-4. **Journal:** the old bestiary book grows into the MC's journal: monster entries
-plus notes about the lost world.
+  ### Backstory: why Frost is a recluse
+  - Frost used to have a normal life: friends, family, a partner, a well-paid job,
+    little to be frustrated about.
+  - After a family birthday reunion, the family drove home. Frost was in no condition
+    to drive and walked home alone. They got home safely; the family of five died in a
+    car crash.
+  - Frost keeps asking whether it would have been different if they had been at the
+    wheel, or had made sure someone sober drove. **This mirrors the game's central
+    question** (could leaving humanity have cost lives?), and like that one, it is
+    never answered.
+  - The press covered it in the worst light ("Family of five die in a car crash! The
+    only survivor walked home! Coincidence?"). There was a trial. Frost walked free,
+    but couldn't live there any more.
+  - It was a small town; the gossip spread. Within a week Frost lost the job, the
+    partner, everything. They sold the house and, with their savings, built a house
+    on the other side of the country, in **Morningfrost Woods**.
+  - Their contempt for humanity is earned, not edgy: people judged them for
+    something nobody could prove.
 
-## Decisions made so far
-- Saving: async saves during play; one quick synchronous save in the Game End event
-for any kind of close. Write to a temp file, then rename. Keep a backup save and
-fall back to it if the main save won't load.
-- Camera: a dedicated camera object, updated in End Step; lerp-follows a target
-with look-ahead, zoom, and a one-frame snap flag. Any instance can be a target.
-- Player: movement normalized on diagonals; animation driven by actual movement;
-keeps its facing while that's still valid.
-- Window resizing stays enabled. Dragging the edge is slow on KDE Wayland; that's a
-GameMaker runner issue, accepted.
+  ### The name
+  - Frost never gave their name publicly. To pay for power, internet and water, they
+    sell game and firewood to the nearby village.
+  - The villagers called them "the recluse of Morningfrost", which became just
+    **Frost**. Even their name comes from how others see them, not from who they are.
+  - The villagers don't know the story. They are probably the only people who have
+    treated Frost decently since the crash, and they are the first ones attacked.
 
-## Open decisions
-- Internal resolution: 240×160 (GBA, recommended for mouse aiming) vs current 640×480.
-- Move speed: currently 4 px/frame (the original was 2).
-- What happens to the original's 35-slot inventory? A shooter may only need a
-weapon wheel plus key items.
-- Story beats, ending, music direction.
-- Redo the tileset: one forest area first, small palette, Aseprite tilemap mode.
+  ## The opening (build late; needs most systems)
+  - Starts as a normal day: cut down a tree (a bit like God of War), take the wood to
+    the village and sell it. This teaches the controls (WASD, mouse, attacking,
+    selling, entering buildings) and introduces the world and Frost.
+  - After the sale, screaming in the streets: plants start attacking people. People
+    run out of houses, a plant monster catches someone (saving them is optional:
+    Frost's first "help or walk away" choice), fire, plants fleeing from the fire.
+  - **Rule:** never "and then it happened". It is happening, and you are part of it.
+  - The opening needs melee, shops, room transitions, NPCs, scripted events and fire,
+    so it is built after the vertical slice, not as it.
 
-## Reference
-- Original assets and design doc: `~/Desktop/Another Generic Adventure - Asset Pack/`
-(`GAME_DESIGN.md`). The original GMS 1.4 project:
-`/mnt/storage/Repositories/GameMaker-1.49/Another Generic Adventure.gmx`.
+  ## Setting and tone
+  - Modern day, around 2016–2026. Starts looking Pokémon-like and cozy, then becomes
+    unhinged action: pistols, shotguns, grenades, chainsaws, cars.
+  - The world shows the damage: higher water levels, submerged cars and buildings,
+    notes about extinct species, peoples and places erased from the map.
+  - **Tone rule:** the action is fun; the world is quietly tragic. Show the heavy
+    material through environment and notes, never lecture. Frost reacts in a few dry
+    words at most. (A submerged car with a child seat says more than any text.)
+
+  1. It's now a different kind of game, and that's fine, but it grows the scope. "Top-down shooter" plus survival (hunting, gathering, limited
+  inventory, trading), driving, events that happen whether you're there or not, and "kill any NPC" like Fallout or Skyrim. Each of those is a
+  system the roadmap doesn't have yet. The roadmap needs a survival section, and the vertical slice should test this loop: gather → prepare → go
+  out → fight → come back. If that loop isn't fun, no amount of content fixes it.
+
+  2. Survival and "guns blazing is rewarded" pull in opposite directions. Scarce ammo and a small inventory say "be careful"; your pillar says "be
+  aggressive". Both can work together, but you have to choose where each applies. A common split: scarcity in materials and supplies (food,
+  scrap, wood: the survival side) and generosity in combat (kills drop ammo or health, so charging in pays off). Without a decision, players will
+  hoard bullets and play it safe, the opposite of Frost.
+
+  3. "Kill any NPC" is the most expensive feature on the list. Every quest, shop and story beat then has to survive its NPC being dead. Fallout
+  and Skyrim spend huge effort on it, and even Skyrim makes key characters unkillable ("essential"). For a solo project, decide early: either a
+  few named NPCs are essential, or every quest has a written "the quest-giver is dead" outcome. This decides how you write every quest, so it's
+  worth deciding before the first one.
+
+  4. The time pressure is a strong idea. "While you went to buy wood, the people you were supposed to protect died" ties the survival loop
+  straight to the theme (help vs. look after yourself) and to Frost's backstory (being somewhere else when people died). Technically it means
+  events need a clock that runs whether the player is there or not, which is one more system for the list.
+
+  5. The endings fit the story's logic. Talking with the deity is the mirror made literal: two beings who gave up on humanity, deciding whether
+  there's another way. The kill ending isn't morally neutral; it ends all life. That fits "make mistakes and live with the consequences", so the
+  player is free to choose it, and the game shows honestly what it costs. A small wording note: you wrote that consumable and non-stackable items
+  get a stacking slot; I've assumed you meant stackable.
+
+  Here are the brief sections. Replace Gameplay pillars and Open decisions, and add the two new sections after Gameplay pillars:
+
+  ## Gameplay pillars
+  1. **GBA/Pokémon-inspired top-down shooter for PC**: move with the keyboard, aim with
+     the mouse.
+  2. **Survival:** most of the time is spent hunting and gathering (buildings, woods,
+     forests, water), trading, and preparing. Driving when necessary.
+  3. **Guns blazing is rewarded in combat.** Playing well and playing in character
+     should be the same thing (e.g. ammo/health from kills, Doom Eternal-style).
+     Scarcity belongs to supplies and materials, not to fighting back.
+  4. **Progression:** Metroid-style abilities that open new paths, plus Dead
+     Space-style weapon upgrades at a workbench.
+  5. **Freedom:** the player can do what they want, Fallout/Skyrim-style, including
+     killing NPCs. Frost's dialogue and the ending reflect the choices.
+  6. **Journal:** the old bestiary book grows into Frost's journal: monster entries
+     plus notes about the lost world.
+
+  ## Inventory and preparation
+  - Weapons and tools are unlocks, not inventory items.
+  - Stackable items (food, supplies, materials like wood and scrap metal, ammo types)
+    take one slot each, stacking up to ~99.
+  - The inventory is small and storage on the go is expensive. Vehicles (bike,
+    motorcycle, car) add some storage, still limited.
+  - Constant selling and buying at different places.
+  - Quests need preparation: some items must be carried to progress, otherwise you
+    backtrack.
+  - The world doesn't wait: events run on their own clock. While you're buying wood,
+    the people you were meant to protect can die.
+
+  ## The deity and the endings
+  - The deity is a hideous amalgamation of many plant types. Frost meets it in the
+    last act.
+  - Two choices, both valid to play:
+    - **Kill it:** a very hard boss fight. Ending: all plant life on Earth dies; all
+      life follows within three years.
+    - **Reason with it:** humanity and plants live in peace. Some plants keep walking
+      the earth; others return to their passive state.
+  - The story stays mostly the same on the surface; Frost's dialogue changes with the
+    route, and the ending shows the consequences.
+  - Talking with the deity is the Frost/deity mirror made literal: two beings who gave
+    up on humanity, deciding whether there's another way.
+
+  ## Open decisions
+  - Story beats after the opening. To be figured out over time.
+  - Music direction.
+  - Killable NPCs: which (if any) are essential, or does every quest have a
+    "quest-giver is dead" outcome?
+  - How the event clock works: real time, in-game days, or per quest timers?
+
+  ## Reference
+  - Original assets and design doc: `~/Desktop/Another Generic Adventure - Asset Pack/`
+    (`GAME_DESIGN.md`). The original GMS 1.4 project:
+    `/mnt/storage/Repositories/GameMaker-1.49/Another Generic Adventure.gmx`.
