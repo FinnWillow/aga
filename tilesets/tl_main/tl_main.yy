@@ -3,6 +3,8 @@
   "%Name":"tl_main",
   "autoTileSets":[
     {"$GMAutoTileSet":"","%Name":"grass to _","closed_edge":false,"name":"grass to _","resourceType":"GMAutoTileSet","resourceVersion":"2.0","tiles":[33,52,51,17,36,32,53,16,35,37,34,18,49,48,50,0,],},
+    {"$GMAutoTileSet":"","%Name":"stones to _","closed_edge":false,"name":"stones to _","resourceType":"GMAutoTileSet","resourceVersion":"2.0","tiles":[81,100,99,65,84,80,101,64,83,85,82,66,97,96,98,0,],},
+    {"$GMAutoTileSet":"","%Name":"plateau to _","closed_edge":false,"name":"plateau to _","resourceType":"GMAutoTileSet","resourceVersion":"2.0","tiles":[130,116,117,114,132,129,148,113,133,149,131,115,146,145,147,0,],},
   ],
   "macroPageTiles":{
     "SerialiseHeight":0,

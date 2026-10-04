@@ -1,0 +1,1 @@
+depth = to_draw_layer(draw_level + 1) - 1 - y

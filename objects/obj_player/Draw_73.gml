@@ -1,0 +1,1 @@
+// draw_tile_collision(draw_level, x, y, 1);

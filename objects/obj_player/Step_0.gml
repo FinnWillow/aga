@@ -16,16 +16,30 @@ move_spd.set(
     move_dir.y * global.player_move_speed 
 )
 
+// -------- unstuck: if something put us inside collision, step out to the nearest free spot
+if (blocked(x, y)) {
+    var freed = false
+    for (var dist = 1; dist <= 4 && !freed; dist++) {   // try 1 px away first, then 2, 3, 4
+        for (var dir = 0; dir < 360; dir += 45) {        // 8 directions
+            var test_x = x + lengthdir_x(dist, dir)
+            var test_y = y + lengthdir_y(dist, dir)
+            if (!blocked(test_x, test_y)) {
+                x = test_x
+                y = test_y
+                coord.set(test_x, test_y)
+                freed = true
+                show_debug_message("UNSTUCK: moved " + string(dist) + " px at " + string(dir) + " deg")
+                break
+            }
+        }
+    }
+}
+
 var prior_coord = coord.cpy()
 
 // -------- movement and collision
-if (!place_meeting(coord.x + move_spd.x, coord.y, obj_col)) {
-    coord.x += move_spd.x
-}
-
-if (!place_meeting(coord.x, coord.y + move_spd.y, obj_col)) {
-    coord.y += move_spd.y
-}
+move_axis(move_spd.x, 0)
+move_axis(0, move_spd.y)
 
 x = coord.x
 y = coord.y

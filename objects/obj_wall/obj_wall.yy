@@ -1,9 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"beta_obj_wall",
+  "%Name":"obj_wall",
   "eventList":[],
   "managed":true,
-  "name":"beta_obj_wall",
+  "name":"obj_wall",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -31,9 +31,9 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"beta_spr_wall",
-    "path":"sprites/beta_spr_wall/beta_spr_wall.yy",
+    "name":"spr_wall",
+    "path":"sprites/spr_wall/spr_wall.yy",
   },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }

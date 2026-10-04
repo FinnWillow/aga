@@ -2,7 +2,7 @@
 target = noone
 
 // how far should the camera's look ahead be.
-displacement = 32.0
+displacement = 20.0
 
 // the winth and height of the camera.
 camera_width = camera_get_view_width(view_camera[0])
