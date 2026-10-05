@@ -31,15 +31,31 @@ camera_set_view_size(cam_0, new_w, new_h)
 // position the camera.
 var goto_x = x + (dir_x * displacement) - (new_w * 0.5)
 var goto_y = y + (dir_y * displacement) - (new_h * 0.5)
-var new_x = lerp(view_x, goto_x, snap || fixed ? 1 : 0.1)
-var new_y = lerp(view_y, goto_y, snap || fixed ? 1 : 0.1)
-camera_set_view_pos(cam_0, new_x, new_y)
 
-// 
+// mouse lean.
+// take the position of the camera, and the position of the cursor, 
+// relative to the current camera position. there are 3 rings of distance.
+// ring 0 does not lean the camera at all.
+// ring 1 does lean based on a relative distance from that ring, as if the ring 
+// itself extended from the start of ring 0 to the end of ring 1.
+// ring 2 does no extra leam and instead teats the lean as if the cursor was on
+// the end of ring 1.
+// can be disabled and lerps.
+
+var local_mx = mouse_x - view_x - new_w / 2
+var local_my = mouse_y - view_y - new_h / 2
+var local_dist = abs(point_distance(0, 0, local_mx, local_my))
+
+var ring = mouse_lean ? clamp(local_dist - ring_0, 0, ring_1 - ring_0) : 0
+
+var offset_x = goto_x + (local_mx / local_dist) * ring * lean_force
+var offset_y = goto_y + (local_my / local_dist) * ring * lean_force
+
+var new_x = lerp(view_x, offset_x, snap || fixed ? 1 : 0.1)
+var new_y = lerp(view_y, offset_y, snap || fixed ? 1 : 0.1)
+camera_set_view_pos(cam_0, new_x, new_y)
 
 // snap is a "one frame" trigger to position and zoom the camera without
 // lerp. if you want to use it to disable the lerp for longer, use the
-// "fixed" flag.
-if (snap) {
-    snap = false
-}
+// "fixed" flag. must be used in the Begin Step or Step event.
+snap = false
