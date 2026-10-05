@@ -79,7 +79,3 @@ for (var lv = 0; lv <= level_count; lv++) { // one extra: standing above the hig
     
     array_push(global.collision_tilemaps, maps)
 }
-
-// make the timer
-fps_timer = new Timer(30);
-fps_last = fps_real;

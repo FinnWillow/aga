@@ -41,11 +41,10 @@ var goto_y = y + (dir_y * displacement) - (new_h * 0.5)
 // ring 2 does no extra leam and instead teats the lean as if the cursor was on
 // the end of ring 1.
 // can be disabled and lerps.
-
 var local_mx = mouse_x - view_x - new_w / 2
 var local_my = mouse_y - view_y - new_h / 2
-var local_dist = abs(point_distance(0, 0, local_mx, local_my))
 
+var local_dist = abs(point_distance(0, 0, local_mx, local_my))
 var ring = mouse_lean ? clamp(local_dist - ring_0, 0, ring_1 - ring_0) : 0
 
 var offset_x = goto_x + (local_mx / local_dist) * ring * lean_force
@@ -53,6 +52,7 @@ var offset_y = goto_y + (local_my / local_dist) * ring * lean_force
 
 var new_x = lerp(view_x, offset_x, snap || fixed ? 1 : 0.1)
 var new_y = lerp(view_y, offset_y, snap || fixed ? 1 : 0.1)
+
 camera_set_view_pos(cam_0, new_x, new_y)
 
 // snap is a "one frame" trigger to position and zoom the camera without
