@@ -46,4 +46,8 @@ currnet_fscn = global.default_fscn_state
 
 
 // -------- startup functions
+render_init(camera_get_view_width(view_camera[0]), camera_get_view_height(view_camera[0]))
 window_set_fullscreen(global.default_fscn_state)
+if (!global.default_fscn_state) {
+    render_fit_window()
+}

@@ -7,7 +7,7 @@
 
   ## Phase 0: decisions
   - [x] Move speed: 2 px/frame (4 for testing)
-  - [x] Screen: 4:3, view 640×480 at zoom 1.0
+  - [x] Screen: 4:3, view 320×240 (the room view), zoom in pixels
   - [x] Colour: art drawn in 4 grey "slots" (0/85/170/255), coloured in game by palettes; slots ordered dark to light in every palette
   - [x] Elevation: levels 0–6, objects draw over their own level and the next one up
   - [x] No real hidden passages; fake them with cover layers / triggers when needed

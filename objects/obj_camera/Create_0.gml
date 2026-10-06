@@ -8,8 +8,11 @@ target = noone
 // how far should the camera's look ahead be.
 displacement = 20.0
 
-// how much to zoom it in
-zoom_factor = 1
+// zoom in pixels. positive zooms in, negative zooms out: the view
+// shrinks or grows by this many pixels vertically, the width follows
+// the aspect. eases there like the rest of the camera. 0 is the only
+// pixel perfect level; anything else is smoothed by the upscale.
+zoom = 0
 
 // singlue use flag; disables lerping for one frame and
 // makes the camera snap to its can_move_lean
@@ -69,6 +72,13 @@ curr_period = intensity
 dir_x = 0
 dir_y = 0
 
+// the camera's float view. the view camera itself only gets whole
+// pixels (see render_set_view), so the lerps have to run on these.
+cam_x = 0
+cam_y = 0
+cam_h = camera_height
+
 image_index = 1
 view_camera[0] = camera_create_view(0, 0, camera_width, camera_height, 0, noone, -1, -1, -1, -1)
 cam_0 = view_camera[0]
+render_set_view(cam_0, cam_x, cam_y, camera_width, camera_height)

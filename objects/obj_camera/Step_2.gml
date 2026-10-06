@@ -18,15 +18,19 @@ if (variable_instance_exists(target, "move_dir") && look_ahead) {
     dir_y = target.move_dir.y
 }
 
-var view_x = camera_get_view_x(cam_0)
-var view_y = camera_get_view_y(cam_0)
+var view_x = cam_x
+var view_y = cam_y
 
-// zoom the camera
-var lerp_h = lerp(camera_get_view_height(cam_0), zoom_factor * camera_height, snap || !can_move_lean ? 1 : 0.1)
+// zoom the camera. zoom is in pixels; once close enough, land exactly
+// on the target so zoom 0 ends up back on an integer scale.
+var zoom_h = camera_height - zoom
+var lerp_h = lerp(cam_h, zoom_h, snap || !can_move_lean ? 1 : 0.1)
+if (abs(lerp_h - zoom_h) < 0.05) {
+    lerp_h = zoom_h
+}
 
-var new_h = clamp(lerp_h, 0, room_height)
+var new_h = clamp(lerp_h, 1, room_height)
 var new_w = new_h * (camera_width / camera_height)
-camera_set_view_size(cam_0, new_w, new_h)
 
 // position the camera.
 var goto_x = x + (dir_x * displacement) - (new_w * 0.5)
@@ -41,8 +45,8 @@ var goto_y = y + (dir_y * displacement) - (new_h * 0.5)
 // ring 2 does no extra leam and instead teats the lean as if the cursor was on
 // the end of ring 1.
 // can be disabled and lerps.
-var local_mx = mouse_x - view_x - new_w / 2
-var local_my = mouse_y - view_y - new_h / 2
+var local_mx = render_mouse_x() - view_x - new_w / 2
+var local_my = render_mouse_y() - view_y - new_h / 2
 
 var local_dist = abs(point_distance(0, 0, local_mx, local_my))
 var ring = can_mouse_lean ? clamp(local_dist - ring_0, 0, ring_1 - ring_0) : 0
@@ -76,7 +80,10 @@ if (curr_shake_frame != -1 && curr_shake_frame < duration) {
     curr_shake_frame++
 }
 
-camera_set_view_pos(cam_0, new_x, new_y)
+cam_x = new_x
+cam_y = new_y
+cam_h = new_h
+render_set_view(cam_0, new_x, new_y, new_w, new_h)
 
 // snap is a "one frame" trigger to position and zoom the camera without
 // lerp. if you want to use it to disable the lerp for longer, use the
