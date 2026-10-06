@@ -25,7 +25,7 @@
   - [x] Depth: y-sorting with depth bands per level
   - [x] Ramps: level decided by position on the ramp
   - [x] Input layer: named actions in global.keymap (keyboard, mouse, wheel); rebinding menu in Phase 3
-  - [ ] *partial* Camera: follow, look-ahead, zoom, snap done; cursor lean + screen shake to do (S)
+  - [x] Camera: follow, look-ahead, zoom, snap cursor lean + screen shake done;
   - [ ] Pixel-perfect rendering + scaling: sprites still drift sub-pixel (draw at rounded positions), integer window scaling (S)
   - [ ] Game states: playing / paused / menu / inventory / journal / dead (S)
   - [ ] *partial* Debug tools: rm_sandbox + collision outlines done; debug overlay, palette colour pickers to do (S). Spawn keys, god mode, hitbox
