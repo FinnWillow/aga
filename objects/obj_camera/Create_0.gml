@@ -1,24 +1,24 @@
+// the winth and height of the camera.
+camera_width = camera_get_view_width(view_camera[0])
+camera_height = camera_get_view_height(view_camera[0])
+
 // the object to snap the camera to.
 target = noone
 
 // how far should the camera's look ahead be.
 displacement = 20.0
 
-// the winth and height of the camera.
-camera_width = camera_get_view_width(view_camera[0])
-camera_height = camera_get_view_height(view_camera[0])
-
 // how much to zoom it in
 zoom_factor = 1
 
 // singlue use flag; disables lerping for one frame and
-// makes the camera snap to its target
+// makes the camera snap to its can_move_lean
 snap = true
 
-// disables lerping completely. use this once instead of
-// setting snap each frame, if the desired result is a
-// no lerp camera.
-fixed = false;
+// disables lerping of the look ahead completely. 
+// use this once instead of setting snap each frame, 
+// if the desired result is a no lerp camera.
+can_move_lean = true
 
 // disables the look ahead of the camera. equivalent to
 // displacement = 0 visually, but more direct.
@@ -26,7 +26,7 @@ look_ahead = true
 
 // disables the mouse lean of the camera. equivalent to
 // making the cursor always sit in ring 0.
-mouse_lean = false
+can_mouse_lean = true
 
 // rings; each ring represents where it ends. to get the
 // boundary of a ring, take the value of the ring before
@@ -38,6 +38,33 @@ ring_1 = camera_width / 2
 
 // how much the lean impacts the camera offsetting. 0 to 1.
 lean_force = 0.3
+
+// camera shake trigger. must be called in Begin Step or
+// Step.
+shake = false
+
+// disables camera shake
+can_shake = true
+
+// how intense should the shake be. keep this value small to
+// not cause nausea. measured in pixel offset at its peaks.
+intensity = 0.25
+
+// how much should the shake fall off over time. it is recomended
+// that you keep it above 0 and below intensity, since these hyper 
+// exreme values can cause problems. does not have to be synced, 
+// as the system will cut the shake short if movement is too small.
+// a value of -1 makes it automatic, based on intensity, and duration.
+falloff = -1
+
+// how long should the shake last for in frames. if for some reason
+// movement is too small, the shake will be cut short, so the apparent
+// shake will be shorter.
+duration = 4
+
+curr_shake_frame = -1
+curr_period = intensity
+
 
 dir_x = 0
 dir_y = 0
