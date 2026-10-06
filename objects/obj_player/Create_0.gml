@@ -1,6 +1,6 @@
-coord = new scr_vector_2(x, y)
-move_dir = new scr_vector_2(0, 0)
-move_spd = new scr_vector_2(0, 0)
+coord = new Vector2(x, y)
+move_dir = new Vector2(0, 0)
+move_spd = new Vector2(0, 0)
 has_moved = false
 last_move = MOVE_DIR.DOWN;
 

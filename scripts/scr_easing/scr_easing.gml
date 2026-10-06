@@ -1,7 +1,7 @@
 
 function scr_easing() constructor {
     static inter = function (start_vec2 = new Vector2(), end_vec2 = new Vector2(), t) {
-        return new scr_vector_2(
+        return new Vector2(
             start_vec2.x + (end_vec2.x - start_vec2.x) * t,
             start_vec2.y + (end_vec2.y - start_vec2.y) * t
         );
