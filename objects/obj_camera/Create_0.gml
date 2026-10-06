@@ -24,6 +24,21 @@ fixed = false;
 // displacement = 0 visually, but more direct.
 look_ahead = true
 
+// disables the mouse lean of the camera. equivalent to
+// making the cursor always sit in ring 0.
+mouse_lean = false
+
+// rings; each ring represents where it ends. to get the
+// boundary of a ring, take the value of the ring before
+// it and subtract it from the current. ring 0 starts at 0.
+// ring 2 is from the end of ring 1 to infinity / the end 
+// of the screen bounds.
+ring_0 = 32
+ring_1 = camera_width / 2
+
+// how much the lean impacts the camera offsetting. 0 to 1.
+lean_force = 0.3
+
 dir_x = 0
 dir_y = 0
 
