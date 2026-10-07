@@ -26,11 +26,26 @@
   **Why now?** Because it's too late. Patience only made sense while there was
   something left to save.
 
+  ## The spores
+  - The deity also releases spores into the air to kill more humans. It's not as
+    extreme as it sounds: about 50% of people are weak enough to die from them.
+  - About 1% of the people who survive benefit from them instead, mostly people who
+    live surrounded by plant matter, like forests. **Frost is one of them.**
+  - What it gives them:
+    - Eating plants, or animals that ate the spores, heals them. (Why food heals.)
+    - Eating rare plant-monster organs gives them permanent abilities. (Why a human
+      can use "magic".) Eating certain other things gives temporary boosts.
+  - The cost: they are slowly turning into a plant monster themselves. Frost doesn't
+    really care.
+  - This is the Frost/deity mirror again, in their body this time: the deity's weapon
+    against humanity is what keeps Frost alive.
+
   ## The protagonist: Frost
   - An adult who decided humans are crap and moved alone into the forest. They know
     living truly alone is hard; they don't care.
-  - Takes no bullshit from anyone: people, life, or the forest. Attacked by plants,
-    they grab a gun and go in guns blazing.
+  - Takes no bullshit from anyone: people, life, or the forest. But they are
+    **careful**, not reckless: they survive by reading a fight, picking their moment,
+    and not taking stupid risks. The combat plays the same way.
   - **Gender and identity are never revealed.** The hat hides the eyes, including in
     any higher-res portrait. Who they are doesn't matter; what they do does.
   - **They make mistakes, fail, and live with the consequences.** Their flaws come from
@@ -81,86 +96,145 @@
     so it is built after the vertical slice, not as it.
 
   ## Setting and tone
-  - Modern day, around 2016–2026. Starts looking Pokémon-like and cozy, then becomes
-    unhinged action: pistols, shotguns, grenades, chainsaws, cars.
+  - Modern day, around 2016–2026. Starts looking Pokémon-like and cozy, then turns
+    dangerous: pistols, shotguns, grenades, chainsaws, cars, and monsters that punish
+    every mistake.
   - The world shows the damage: higher water levels, submerged cars and buildings,
     notes about extinct species, peoples and places erased from the map.
-  - **Tone rule:** the action is fun; the world is quietly tragic. Show the heavy
+  - **Tone rule:** the fights are tense; the world is quietly tragic. Show the heavy
     material through environment and notes, never lecture. Frost reacts in a few dry
     words at most. (A submerged car with a child seat says more than any text.)
-
-  1. It's now a different kind of game, and that's fine, but it grows the scope. "Top-down shooter" plus survival (hunting, gathering, limited
-  inventory, trading), driving, events that happen whether you're there or not, and "kill any NPC" like Fallout or Skyrim. Each of those is a
-  system the roadmap doesn't have yet. The roadmap needs a survival section, and the vertical slice should test this loop: gather → prepare → go
-  out → fight → come back. If that loop isn't fun, no amount of content fixes it.
-
-  2. Survival and "guns blazing is rewarded" pull in opposite directions. Scarce ammo and a small inventory say "be careful"; your pillar says "be
-  aggressive". Both can work together, but you have to choose where each applies. A common split: scarcity in materials and supplies (food,
-  scrap, wood: the survival side) and generosity in combat (kills drop ammo or health, so charging in pays off). Without a decision, players will
-  hoard bullets and play it safe, the opposite of Frost.
-
-  3. "Kill any NPC" is the most expensive feature on the list. Every quest, shop and story beat then has to survive its NPC being dead. Fallout
-  and Skyrim spend huge effort on it, and even Skyrim makes key characters unkillable ("essential"). For a solo project, decide early: either a
-  few named NPCs are essential, or every quest has a written "the quest-giver is dead" outcome. This decides how you write every quest, so it's
-  worth deciding before the first one.
-
-  4. The time pressure is a strong idea. "While you went to buy wood, the people you were supposed to protect died" ties the survival loop
-  straight to the theme (help vs. look after yourself) and to Frost's backstory (being somewhere else when people died). Technically it means
-  events need a clock that runs whether the player is there or not, which is one more system for the list.
-
-  5. The endings fit the story's logic. Talking with the deity is the mirror made literal: two beings who gave up on humanity, deciding whether
-  there's another way. The kill ending isn't morally neutral; it ends all life. That fits "make mistakes and live with the consequences", so the
-  player is free to choose it, and the game shows honestly what it costs. A small wording note: you wrote that consumable and non-stackable items
-  get a stacking slot; I've assumed you meant stackable.
-
-  Here are the brief sections. Replace Gameplay pillars and Open decisions, and add the two new sections after Gameplay pillars:
 
   ## Gameplay pillars
   1. **GBA/Pokémon-inspired top-down shooter for PC**: move with the keyboard, aim with
      the mouse.
-  2. **Survival:** most of the time is spent hunting and gathering (buildings, woods,
-     forests, water), trading, and preparing. Driving when necessary.
-  3. **Guns blazing is rewarded in combat.** Playing well and playing in character
-     should be the same thing (e.g. ammo/health from kills, Doom Eternal-style).
-     Scarcity belongs to supplies and materials, not to fighting back.
-  4. **Progression:** Metroid-style abilities that open new paths, plus Dead
-     Space-style weapon upgrades at a workbench.
-  5. **Freedom:** the player can do what they want, Fallout/Skyrim-style, including
-     killing NPCs. Frost's dialogue and the ending reflect the choices.
-  6. **Journal:** the old bestiary book grows into Frost's journal: monster entries
+  2. **Careful combat, souls-style:** dodge and punish. Recklessness is punished;
+     exploring and taking on fights is rewarded. Aggressive play is possible (dashing
+     through, shoving enemies into bad positions), but it has to be earned with skill.
+  3. **Exploring and gathering:** most of the time is spent exploring, hunting and
+     gathering (buildings, woods, forests, water), trading, and preparing. Driving
+     when necessary.
+  4. **Rare drops and crafting, Hypixel Skyblock-style:** enemies drop materials that
+     are sold or turned into gear; rare drops give very strong equipment, either
+     directly or as crafting materials. Never a sluggish grind: there are ways to raise
+     your odds or narrow what you can get, so when you need something, you can work
+     towards it.
+  5. **Progression without levels:** no levelling system. You get stronger through
+     equipment, weapon upgrades commissioned at traders, permanent abilities
+     from plant-monster organs, and temporary boosts from food. Metroid-style ability gates open quests and extras.
+  6. **Freedom:** the player can do what they want, including killing NPCs. Nothing is
+     required. Frost's reactions, the world's reaction and the ending reflect the
+     choices.
+  7. **Journal:** the old bestiary book grows into Frost's journal: monster entries
      plus notes about the lost world.
+
+  ## Combat
+  - **Guns are the main weapon.** Melee is for making distance from an enemy, or
+    finishing it off up close.
+  - Three bars, souls-style:
+    - **Health:** drains when hit. Getting hit also stuns you, which is what makes
+      walking into a fight carelessly so dangerous. (A short invulnerability window
+      after each hit, so groups can't stun-lock you to death.)
+    - **Stamina:** spent by dodging *and* attacking, so you manage it between defence
+      and attack. Leaning too hard either way is a slow but sure death.
+    - **Exhaustion:** what abilities run on. Using abilities drains it; once it's
+      empty, no abilities until you eat.
+  - **Abilities** are permanent once unlocked (by eating a plant-monster organ) and
+    can be toggled on and off.
+  - **Food does the healing and refilling, like drinking Estus:** slow, and dangerous
+    if done at the wrong moment. It's eaten from the inventory one item at a time, and
+    the game doesn't stop while the inventory is open. Eating mid-fight is a risk you
+    choose to take.
+    - While eating, Frost can move, but slowly.
+    - Getting hit mid-bite stops eating: you keep the share already restored, based
+      on how far you got, and the item is spent anyway.
+    - Unlike a single Estus flask, there are many foods: they differ in how much they
+      restore and how many fit in a stack.
+    - **Only stamina refills by itself.** Health and exhaustion never come back on
+      their own, only from food, which restores them gradually while eating, not
+      instantly. Some foods are better at clearing exhaustion than others.
+    - Some foods refill stamina faster, for when you're in a pinch. These are usually
+      instant, unless they also restore health or exhaustion.
+    - Certain items give temporary boosts.
 
   ## Inventory and preparation
   - Weapons and tools are unlocks, not inventory items.
-  - Stackable items (food, supplies, materials like wood and scrap metal, ammo types)
-    take one slot each, stacking up to ~99.
+  - Stackable items (food, supplies, materials like wood and scrap metal, monster
+    drops, ammo types) take one slot each, stacking up to ~99.
   - The inventory is small and storage on the go is expensive. Vehicles (bike,
     motorcycle, car) add some storage, still limited.
   - Constant selling and buying at different places.
   - Quests need preparation: some items must be carried to progress, otherwise you
     backtrack.
-  - The world doesn't wait: events run on their own clock. While you're buying wood,
-    the people you were meant to protect can die.
+
+  ## Crafting
+  - No crafting system of its own: **crafting is a commission at a trader.**
+  - A recipe needs certain items (usually monster-plant parts), money, the right
+    trader (some only exist in certain places), and time. Come back when it's done
+    to get the unlock.
+  - Example: an exotic plant-based weapon needs specific monster-plant parts, money, a
+    special trader, and a wait.
+  - The waiting runs on the game clock, and traders may keep schedules, so a
+    commission is also about planning when to come back.
+  - **Weapon upgrades are commissions too.** The weapon itself is part of what the
+    trader asks for, so you can't use it until the upgrade is done.
+  - Since time can be skipped, the waiting is never forced on you. It's a choice:
+    spend the daylight (or the night) doing other things while it's being made, or
+    skip ahead and get it sooner.
+
+  ## Time
+  - An in-game clock with a day/night cycle. The day length is decided by feel once
+    it can be played (a Majora's Mask-like ~54 real minutes per day is the starting
+    guess). Sleeping skips time; you are never forced to sleep.
+  - **The world doesn't wait.** Some quests have a time limit, or have to be started at
+    a certain place and time. Failing is not showing up on time, or not at all.
+    Sleeping during a quest is fine, as long as you make it on time.
+  - Some NPCs keep schedules (a farmer only sells first thing in the morning, and a bit
+    at night). You learn them by talking to them, or by watching them.
+  - Depending on what you do, NPCs can die, including while you're somewhere else.
+    Off-screen events are not simulated: when it matters, the game checks what should
+    have happened by now.
+
+  ## Structure and story
+  - **Nothing is required.** The deity can be reached from the first second you can
+    move, and there's no time limit on it. You can go whenever you want, or never, and
+    just live as a wandering merchant getting rich.
+  - **The story is pieced together by the player:** from clues, notes, NPCs and Frost's
+    reactions. If you don't care about it, you can skip it entirely.
+  - Ability gates lock quests, items, abilities, boosts and lore, never the way to the
+    deity.
+  - Killing an NPC is a choice with no effect on the game's structure. What changes is
+    how Frost reacts afterwards, how the world reacts to Frost, and the ending.
+  - **How the world reacts** (the details depend on the story): prices go up, quests
+    become unavailable, people attack Frost, and some even treat Frost as one of the
+    plant monsters.
 
   ## The deity and the endings
-  - The deity is a hideous amalgamation of many plant types. Frost meets it in the
-    last act.
+  - The deity is a hideous amalgamation of many plant types.
   - Two choices, both valid to play:
-    - **Kill it:** a very hard boss fight. Ending: all plant life on Earth dies; all
-      life follows within three years.
+    - **Kill it:** a very hard boss fight, beatable from the start if you have the
+      skill (rush it at "level 1"; there are no levels). Ending: all plant life on
+      Earth dies; all life follows within three years.
     - **Reason with it:** humanity and plants live in peace. Some plants keep walking
-      the earth; others return to their passive state.
-  - The story stays mostly the same on the surface; Frost's dialogue changes with the
-    route, and the ending shows the consequences.
+      the earth; others return to their passive state. Reasoning is earned: it only
+      becomes possible once Frost understands the deity, through what was found while
+      exploring. Rushing in gets you the fight.
+  - **Full genocide**, UNDERTALE-style but only about humans: killing every human
+    changes the game around it. The deity attacks on sight. It still speaks to Frost,
+    but the player doesn't get to choose: Frost answers for themselves.
   - Talking with the deity is the Frost/deity mirror made literal: two beings who gave
     up on humanity, deciding whether there's another way.
+  - The rush and the understanding requirement also give speedrunners two routes.
 
   ## Open decisions
-  - Story beats after the opening. To be figured out over time.
+  - Story beats and clues. To be figured out over time.
   - Music direction.
-  - Killable NPCs: which (if any) are essential, or does every quest have a
-    "quest-giver is dead" outcome?
-  - How the event clock works: real time, in-game days, or per quest timers?
+  - Day length: tune by feel once the clock exists.
+  - Drop odds: how you raise your chances or narrow drops. Balance when there's gear
+    that needs it.
+  - What exactly counts as "understanding" the deity for the reason route.
+  - The world's reaction in detail: tied to the story as it takes shape.
+  - Ability costs: how much exhaustion each ability uses (per use, or while toggled on).
 
   ## Reference
   - Original assets and design doc: `~/Desktop/Another Generic Adventure - Asset Pack/`

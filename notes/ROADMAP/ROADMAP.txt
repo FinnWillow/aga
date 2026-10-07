@@ -12,71 +12,102 @@
   - [x] Elevation: levels 0–6, objects draw over their own level and the next one up
   - [x] No real hidden passages; fake them with cover layers / triggers when needed
   - [x] Inventory model: weapons/tools are unlocks; stackable items one slot each (~99); small inventory
-  - [ ] Scarcity split: which resources are scarce (supplies, materials) vs generous (combat drops)
-  - [ ] Killable NPCs: essential NPCs, or a "quest-giver dead" outcome for every quest
-  - [ ] Event clock: real time, in-game days, or per-quest timers
-  - [ ] Survival needs: hunger / other needs, or food only as healing / trade goods
+  - [x] Combat: careful, souls-style dodge and punish; guns main, melee for distance / finishers; recklessness punished, exploring and
+  fighting rewarded
+  - [x] Loot: Skyblock-style rare drops (gear or crafting materials); ways to raise odds / narrow drops; no levelling system
+  - [x] Crafting: commissions at traders (items + money + the right trader + time), no separate crafting system; weapon upgrades too
+  (the weapon is handed over until done)
+  - [x] Needs: no hunger. Health, stamina (dodging and attacking) and exhaustion (abilities) bars; food restores them, eaten from a
+  non-pausing inventory
+  - [x] Spores: why food heals and why Frost can use abilities (plant-monster organs); see the brief
+  - [x] Time: in-game clock, day/night, sleep skips time; timed quests fail on not showing up; some NPCs keep schedules; off-screen
+  events resolved when checked, not simulated
+  - [x] Structure: nothing required, no essential NPCs; deity reachable from the start; reason route needs understanding; killing NPCs
+  changes Frost's reactions, the world's reaction and the ending
+  - [x] Abilities: permanent and toggleable, unlocked by eating organs; run on exhaustion, refilled by food; temporary boosts from items
+  - [x] World reaction to kills: prices up, quests closed, attacked, treated as a plant monster; UNDERTALE-style genocide around humans
+  - [x] Opening: the village attack stays as the scripted start
 
   ## Phase 1: foundation
-  - [x] Movement: normalized diagonals, facing kept while valid, animation from actual movement
+  - [x] Movement: diagonals at full speed per axis (2.83; normalized can't sit on the pixel grid), facing kept while valid, animation from
+  actual movement
   - [x] Tile collision: generated from tileset_collisions.png (masks + debug outlines), per level (own level + the one above), corner correction /
   diagonal sliding, unstuck safety net, feet-sized masks
   - [x] Palette system: palette shader, per-object (obj_palletted) and per-layer (from layer name)
   - [x] Depth: y-sorting with depth bands per level
   - [x] Ramps: level decided by position on the ramp
   - [x] Input layer: named actions in global.keymap (keyboard, mouse, wheel); rebinding menu in Phase 3
-  - [x] Camera: follow, look-ahead, zoom, snap cursor lean + screen shake done;
-  - [x] Pixel-perfect rendering + scaling: sprites still drift sub-pixel (draw at rounded positions), integer window scaling (S)
+  - [x] Camera: follow, look-ahead, zoom (in pixels), cursor lean, screen shake; persistent, sets up views in every room
+  - [x] Pixel-perfect rendering + scaling: native-res surface, integer window scaling, smooth sub-pixel camera
   - [x] Game states: playing / paused / menu / inventory / journal / dead (S)
-  - [x] Debug tools: rm_sandbox + collision outlines done; debug overlay, palette colour pickers to do (S). Spawn keys, god mode, hitbox
-  view, give-item keys come with Phase 2
+  - [x] Debug tools: debug menu (F1) with per-object registration, palette editor, rm_sandbox, collision outlines. Spawn keys, god mode,
+  hitbox view, give-item keys come with Phase 2
+  - [ ] Stats: health / stamina / exhaustion as one reusable component for the player and enemies (drain, max; only
+  stamina regenerates) (S)
+  - [ ] Dodge / dash: costs stamina, i-frames, can't be spammed (S)
+  - [ ] Game clock: in-game time, day/night tint, skip-to hook for sleeping, day length as a debug slider (S)
 
-  ## Phase 2: vertical slice (combat + survival loop)
+  ## Phase 2: vertical slice (careful combat + loot loop)
   - [ ] Mouse aiming + aim-based facing (S)
-  - [ ] Data-driven weapon system: pistol, then shotgun; ammo types as items (M)
-  - [ ] Projectiles + hitbox/hurtbox damage with teams and i-frames (M)
-  - [ ] Health, damage, death, respawn (S)
+  - [ ] Data-driven weapon system: pistol, then shotgun; ammo types as items; shooting costs stamina (M)
+  - [ ] Melee: shove for distance, finisher up close; costs stamina (S)
+  - [ ] Projectiles + hitbox/hurtbox damage with teams (M)
+  - [ ] Getting hit: damage, stun, i-frames after the hit, death, respawn (S)
   - [ ] Hit feedback: hitstop, flash, knockback, shake, particles (S)
-  - [ ] Enemy base + state machine; flower monster; mp_grid pathfinding (M)
-  - [ ] Item database: ID → name, sprite, stack size, value, use (S)
-  - [ ] Inventory: small, stackable slots; pick up, drop, use (M)
-  - [ ] Pickups + drops: ammo, health, materials (S)
+  - [ ] Enemy base + state machine; flower monster with telegraphed attacks to dodge and punish; mp_grid pathfinding (M)
+  - [ ] Item database: ID → name, sprite, stack size, value, rarity, use (food: health / exhaustion restored gradually while eating,
+  instant stamina), crafting inputs (S)
+  - [ ] Drop tables: common / rare drops per enemy, rarity rolls (S)
+  - [ ] Inventory: small, stackable slots; pick up, drop, use; doesn't pause the game; one food at a time (M)
+  - [ ] Eating: slowed movement while eating, restores gradually; a hit stops it, keeps what was restored, item spent (S)
+  - [ ] Pickups + drops: ammo, food, materials (S)
   - [ ] One gatherable resource: chop trees for wood (S)
-  - [ ] One trader: buy ammo, sell wood (S)
-  - [ ] Basic HUD + crosshair + inventory bar (S)
+  - [ ] One commission at the trader: a monster drop + money, ready after a wait, gives an unlock (S)
+  - [ ] One trader: buy ammo and food, sell wood and drops (S)
+  - [ ] Basic HUD: health / stamina / exhaustion bars, crosshair, inventory bar (S)
   - [ ] Placeholder sound manager (S)
-  - [ ] MILESTONE: one area, pistol + shotgun, flower monsters, chop wood, trade it for ammo. Is the loop fun?
+  - [ ] MILESTONE: one area, pistol + shotgun + melee, flower monsters, a rare drop worth chasing, craft or sell it, come back stronger.
+  Is the loop fun?
 
   ## Phase 3: game structure
   - [ ] Rooms + transitions: doors, spawn points, per-room memory (M)
   - [ ] Save/load: async in play, sync on Game End, temp + rename, backup (M)
   - [ ] *partial* Tilemaps: layers, palettes, collision and levels done; auto-tiling, water to do (M)
-  - [ ] NPCs: base object, alive/dead state that persists, essential flag (M)
-  - [ ] Text / dialogue box; dialogue that can vary by flags (S)
-  - [ ] Quests: objectives, required items, success / failure outcomes (M)
-  - [ ] Event clock: world events that progress whether the player is there or not (M)
-  - [ ] Interactables: notes, switches, workbench, storage containers (S)
-  - [ ] Journal: bestiary + lore notes (M)
+  - [ ] NPCs: base object, alive/dead state that persists; no essential NPCs (M)
+  - [ ] NPC schedules: where an NPC is / what they do at which time, for the NPCs that need it (M)
+  - [ ] Text / dialogue box; dialogue that can vary by flags, time and Frost's past choices (S)
+  - [ ] Quests: objectives, required items, time windows, start at a place and time, fail on no-show, success / failure outcomes (M)
+  - [ ] Off-screen events: resolve "what should have happened by now" from the clock when it matters (S)
+  - [ ] Sleeping: beds skip time (S)
+  - [ ] Interactables: notes, switches, storage containers (S)
+  - [ ] Journal: bestiary + lore notes; tracks what Frost understands about the deity (M)
+  - [ ] World reaction: NPCs react to Frost's kills (prices, closed quests, attacking, treating Frost as a plant monster) (M)
+  - [ ] Genocide tracking: kill counts of humans, UNDERTALE-style; the world changes when they're all gone (S)
   - [ ] Menus: main, pause, settings (volume, resolution, rebinding) (M)
 
-  ## Phase 4: survival and progression
+  ## Phase 4: exploring, gathering and progression
   - [ ] Gathering: scavenging buildings, woods, water; resource respawn rules (M)
-  - [ ] Hunting: animals with flee / wander AI, drops (M)
+  - [ ] Hunting: animals with flee / wander AI, drops; eating spore-fed animals heals (M)
   - [ ] Shops across places: different stock and prices per location (S)
-  - [ ] Workbench weapon upgrades (M)
-  - [ ] Ability gates (e.g. chainsaw cuts vines) (M)
+  - [ ] Commissions: recipes per trader (items, money, time), special traders in certain places; weapon upgrades
+  (the weapon is handed over and unusable until done) (M)
+  - [ ] Rare drops: drop-odds modifiers and ways to narrow drops (M)
+  - [ ] Abilities: permanent unlocks from plant-monster organs, toggleable, run on exhaustion (M)
+  - [ ] Boosts: temporary buffs from eating certain items (S)
+  - [ ] Ability gates for quests and extras, never the way to the deity (M)
   - [ ] Map / minimap (L)
   - [ ] Weapon / tool switching from unlocks (S)
   - [ ] More weapons, mostly data + art (S each)
   - [ ] Throwables: grenades (S)
-  - [ ] Melee: chainsaw (M)
+  - [ ] Heavy melee: chainsaw (M)
 
   ## Phase 5: big and risky
   - [ ] Vehicles: driving + limited storage (bike, motorcycle, car) (L)
-  - [ ] Story flags + cutscenes (Sequences); Frost's dialogue per route (M)
+  - [ ] Story flags + cutscenes (Sequences); Frost's reactions to past choices (M)
   - [ ] The opening: tree, village, selling, the attack (needs most systems) (L)
   - [ ] Bosses (L each)
-  - [ ] The deity: final encounter, kill route (boss) and reason route; both endings (L)
+  - [ ] The deity: reachable from the start; kill route (boss), reason route (needs understanding), genocide case (Frost answers for
+  themselves); both endings (L)
   - [ ] Music manager: crossfades, per-area tracks (S)
 
   ## Art and pipeline
@@ -94,3 +125,5 @@
     don't mirror/rotate tiles that have collision
   - Sorting objects inherit obj_sorted (draw_level = level they stand on);
     palette objects inherit obj_palletted
+  - Rooms: no views or camera needed in the room editor; obj_global goes only in the first room
+  - Debug: register editable fields at the end of Create with debug_target / debug_add
