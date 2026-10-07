@@ -51,6 +51,8 @@
     {"id":{"name":"obj_sorted","path":"objects/obj_sorted/obj_sorted.yy",},},
     {"id":{"name":"obj_wall","path":"objects/obj_wall/obj_wall.yy",},},
     {"id":{"name":"rm_sandbox","path":"rooms/rm_sandbox/rm_sandbox.yy",},},
+    {"id":{"name":"scr_debug_pallettes","path":"scripts/scr_debug_pallettes/scr_debug_pallettes.yy",},},
+    {"id":{"name":"scr_debug","path":"scripts/scr_debug/scr_debug.yy",},},
     {"id":{"name":"scr_draw_layers","path":"scripts/scr_draw_layers/scr_draw_layers.yy",},},
     {"id":{"name":"scr_easing","path":"scripts/scr_easing/scr_easing.yy",},},
     {"id":{"name":"scr_GLOBAL_GAME_STATE","path":"scripts/scr_GLOBAL_GAME_STATE/scr_GLOBAL_GAME_STATE.yy",},},

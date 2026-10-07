@@ -47,8 +47,12 @@ global.keymap = {
 currnet_fscn = global.default_fscn_state
 
 
+// -------- debug
+debug_add_builder(debug_pallette_build, debug_pallette_update)
+
+
 // -------- startup functions
-render_init(camera_get_view_width(view_camera[0]), camera_get_view_height(view_camera[0]))
+render_init()
 window_set_fullscreen(global.default_fscn_state)
 if (!global.default_fscn_state) {
     render_fit_window()

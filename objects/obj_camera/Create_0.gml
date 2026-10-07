@@ -1,6 +1,6 @@
 // the winth and height of the camera.
-camera_width = camera_get_view_width(view_camera[0])
-camera_height = camera_get_view_height(view_camera[0])
+camera_width = BASE_W
+camera_height = BASE_H
 
 // the object to snap the camera to.
 target = noone
@@ -79,6 +79,28 @@ cam_y = 0
 cam_h = camera_height
 
 image_index = 1
-view_camera[0] = camera_create_view(0, 0, camera_width, camera_height, 0, noone, -1, -1, -1, -1)
-cam_0 = view_camera[0]
+// the camera is persistent and outlives rooms; Room Start hands it to
+// each room's view.
+cam_0 = camera_create_view(0, 0, camera_width, camera_height, 0, noone, -1, -1, -1, -1)
 render_set_view(cam_0, cam_x, cam_y, camera_width, camera_height)
+
+
+// -------- debug
+debug_target(id)
+debug_add("Camera", "zoom", DBG.SLIDER_INT, -120, 120)
+debug_add("Camera", "snap", DBG.BUTTON)
+
+debug_add("Camera", "look_ahead", DBG.TOGGLE)
+debug_add("Camera", "displacement", DBG.SLIDER, 0, 64)
+
+debug_add("Camera", "can_move_lean", DBG.TOGGLE)
+debug_add("Camera", "can_mouse_lean", DBG.TOGGLE)
+debug_add("Camera", "ring_0", DBG.SLIDER_INT, 0, 160)
+debug_add("Camera", "ring_1", DBG.SLIDER_INT, 0, 320)
+debug_add("Camera", "lean_force", DBG.SLIDER, 0, 1)
+
+debug_add("Camera", "can_shake", DBG.TOGGLE)
+debug_add("Camera", "intensity", DBG.SLIDER, 0, 16)
+debug_add("Camera", "falloff", DBG.SLIDER, -1, 4)
+debug_add("Camera", "duration", DBG.SLIDER_INT, 1, 60)
+debug_add("Camera", "shake", DBG.BUTTON)

@@ -1,6 +1,3 @@
-// the room's view is the base resolution
-render_init(camera_get_view_width(view_camera[0]), camera_get_view_height(view_camera[0]))
-
 global.level_tilemaps = []      // level -> all tilemaps on that level
 
 var game_layers = layer_get_all();

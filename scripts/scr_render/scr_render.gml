@@ -6,28 +6,31 @@
 /// leftover fraction is applied when the surface is drawn to the window, so the
 /// camera still moves smoothly on screen while the art stays on its own grid.
 
+// the base resolution, for every room. zoom 0 always lands on an integer scale.
+#macro BASE_W 320
+#macro BASE_H 240
+
 global.render = {
-    // the room's view size. zoom 0 always lands on an integer scale.
-    base_w: 320,
-    base_h: 240,
+    base_w: BASE_W,
+    base_h: BASE_H,
 
     // the float view handed over by the camera.
     view_x: 0,
     view_y: 0,
-    view_w: 320,
-    view_h: 240,
+    view_w: BASE_W,
+    view_h: BASE_H,
 
     // the whole pixel view the surface is actually rendered with.
     snap_x: 0,
     snap_y: 0,
-    snap_w: 321,
-    snap_h: 241,
+    snap_w: BASE_W + 1,
+    snap_h: BASE_H + 1,
 
     // where the game image sits in the window, and its integer scale.
     out_x: 0,
     out_y: 0,
-    out_w: 320,
-    out_h: 240,
+    out_w: BASE_W,
+    out_h: BASE_H,
     scale: 1,
 
     // sha_sharp_bilinear uniforms, set in render_init
@@ -35,11 +38,9 @@ global.render = {
     u_scale: -1,
 }
 
-/// sets the base resolution (the room's view size). call on room start.
-function render_init(_base_w, _base_h) {
+/// takes over drawing the application surface. call once, on game start.
+function render_init() {
     var r = global.render
-    r.base_w = _base_w
-    r.base_h = _base_h
     r.u_tex_size = shader_get_uniform(sha_sharp_bilinear, "u_tex_size")
     r.u_scale = shader_get_uniform(sha_sharp_bilinear, "u_scale")
     application_surface_draw_enable(false)

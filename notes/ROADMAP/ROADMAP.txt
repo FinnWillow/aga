@@ -28,7 +28,7 @@
   - [x] Camera: follow, look-ahead, zoom, snap cursor lean + screen shake done;
   - [x] Pixel-perfect rendering + scaling: sprites still drift sub-pixel (draw at rounded positions), integer window scaling (S)
   - [x] Game states: playing / paused / menu / inventory / journal / dead (S)
-  - [ ] *partial* Debug tools: rm_sandbox + collision outlines done; debug overlay, palette colour pickers to do (S). Spawn keys, god mode, hitbox
+  - [x] Debug tools: rm_sandbox + collision outlines done; debug overlay, palette colour pickers to do (S). Spawn keys, god mode, hitbox
   view, give-item keys come with Phase 2
 
   ## Phase 2: vertical slice (combat + survival loop)
