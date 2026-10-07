@@ -48,7 +48,11 @@ var goto_y = y + (dir_y * displacement) - (new_h * 0.5)
 var local_mx = render_mouse_x() - view_x - new_w / 2
 var local_my = render_mouse_y() - view_y - new_h / 2
 
-var local_dist = abs(point_distance(0, 0, local_mx, local_my))
+var local_dist = point_distance(0, 0, local_mx, local_my)
+if (local_dist == 0) {
+    local_dist = 0.01
+}
+
 var ring = can_mouse_lean ? clamp(local_dist - ring_0, 0, ring_1 - ring_0) : 0
 
 var offset_x = goto_x + (local_mx / local_dist) * ring * lean_force
@@ -63,7 +67,7 @@ var new_y = lerp(view_y, offset_y, snap || !can_move_lean ? 1 : 0.1)
 // 1 is the same as disableing it (ish) and -1 is automatic (from the duration)
 // duration = how many frames the shake lasts for.
 
-if (shake) {
+if (shake && can_shake) {
     curr_period = intensity
     curr_shake_frame = 0
 }

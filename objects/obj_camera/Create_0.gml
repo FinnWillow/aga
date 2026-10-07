@@ -51,7 +51,7 @@ can_shake = true
 
 // how intense should the shake be. keep this value small to
 // not cause nausea. measured in pixel offset at its peaks.
-intensity = 0.25
+intensity = 4
 
 // how much should the shake fall off over time. it is recomended
 // that you keep it above 0 and below intensity, since these hyper 
