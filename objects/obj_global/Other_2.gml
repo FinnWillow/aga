@@ -4,7 +4,9 @@
 // global
 global.default_fscn_state = true
 global.u_pallette_handle = shader_get_uniform(sha_pallette, "u_pallette")
+global.game_state = GLOBAL_GAME_STATE.MENU
 
+// tileset collisions
 var tile_collision = build_tile_collision(spr_tileset_collision);
 global.tile_shapes = tile_collision.segments;
 global.tile_masks = tile_collision.masks;

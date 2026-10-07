@@ -53,6 +53,7 @@
     {"id":{"name":"rm_sandbox","path":"rooms/rm_sandbox/rm_sandbox.yy",},},
     {"id":{"name":"scr_draw_layers","path":"scripts/scr_draw_layers/scr_draw_layers.yy",},},
     {"id":{"name":"scr_easing","path":"scripts/scr_easing/scr_easing.yy",},},
+    {"id":{"name":"scr_GLOBAL_GAME_STATE","path":"scripts/scr_GLOBAL_GAME_STATE/scr_GLOBAL_GAME_STATE.yy",},},
     {"id":{"name":"scr_input_decoder","path":"scripts/scr_input_decoder/scr_input_decoder.yy",},},
     {"id":{"name":"scr_MOVE_DIR","path":"scripts/scr_MOVE_DIR/scr_MOVE_DIR.yy",},},
     {"id":{"name":"scr_pallettes","path":"scripts/scr_pallettes/scr_pallettes.yy",},},

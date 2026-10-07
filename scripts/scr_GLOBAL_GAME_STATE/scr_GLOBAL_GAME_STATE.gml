@@ -1,0 +1,8 @@
+enum GLOBAL_GAME_STATE {
+    PLAYING,
+    PAUSED,
+    MENU,
+    INVENTORY,
+    JOURNAL,
+    DEAD
+}
