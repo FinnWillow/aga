@@ -17,7 +17,3 @@ if (keymap_check_pressed(global.keymap.fullscreen)) {
         render_fit_window()
     }
 }
-
-if (keymap_check_pressed(global.keymap.dodge)) {
-    obj_camera.shake = true
-}

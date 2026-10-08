@@ -15,9 +15,8 @@ obj_camera.target = id
 obj_camera.snap = true
 
 // -------- debug
-debug_target(global)
-debug_add("Player", "player_move_speed", DBG.SLIDER_INT, 1, 8)
 debug_target(id)
+debug_add("Player", "move_speed", DBG.SLIDER_INT, 1, 8)
 debug_add("Player", "x", DBG.WATCH)
 debug_add("Player", "y", DBG.WATCH)
 

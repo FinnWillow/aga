@@ -11,9 +11,6 @@ var tile_collision = build_tile_collision(spr_tileset_collision);
 global.tile_shapes = tile_collision.segments;
 global.tile_masks = tile_collision.masks;
 
-// player
-global.player_move_speed = 2
-
 
 // -------- keys
 global.keymap = {

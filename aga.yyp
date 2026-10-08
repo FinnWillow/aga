@@ -41,6 +41,7 @@
   "resources":[
     {"id":{"name":"BRIEF","path":"notes/BRIEF/BRIEF.yy",},},
     {"id":{"name":"ROADMAP","path":"notes/ROADMAP/ROADMAP.yy",},},
+    {"id":{"name":"obj_armature","path":"objects/obj_armature/obj_armature.yy",},},
     {"id":{"name":"obj_camera","path":"objects/obj_camera/obj_camera.yy",},},
     {"id":{"name":"obj_col","path":"objects/obj_col/obj_col.yy",},},
     {"id":{"name":"obj_global","path":"objects/obj_global/obj_global.yy",},},
@@ -51,6 +52,7 @@
     {"id":{"name":"obj_sorted","path":"objects/obj_sorted/obj_sorted.yy",},},
     {"id":{"name":"obj_wall","path":"objects/obj_wall/obj_wall.yy",},},
     {"id":{"name":"rm_sandbox","path":"rooms/rm_sandbox/rm_sandbox.yy",},},
+    {"id":{"name":"scr_ARMAT_STATE","path":"scripts/scr_ARMAT_STATE/scr_ARMAT_STATE.yy",},},
     {"id":{"name":"scr_debug_pallettes","path":"scripts/scr_debug_pallettes/scr_debug_pallettes.yy",},},
     {"id":{"name":"scr_debug","path":"scripts/scr_debug/scr_debug.yy",},},
     {"id":{"name":"scr_draw_layers","path":"scripts/scr_draw_layers/scr_draw_layers.yy",},},

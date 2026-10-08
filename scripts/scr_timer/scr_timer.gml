@@ -36,4 +36,8 @@ function Timer(_cicle) constructor {
     get = function () {
         return timer;
     }
+    
+    set = function (_new_time = timer) {
+        timer = _new_time
+    }
 }
