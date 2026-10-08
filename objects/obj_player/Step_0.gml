@@ -15,8 +15,8 @@ move_dir = move_dir.nor();
 // normalized diagonals (1.41 per axis) can't land on the pixel grid
 // evenly and make the player wobble against the camera.
 move_spd.set(
-    sign(move_dir.x) * global.player_move_speed,
-    sign(move_dir.y) * global.player_move_speed
+    sign(move_dir.x) * stats.move_speed,
+    sign(move_dir.y) * stats.move_speed
 )
 
 // -------- unstuck: if something put us inside collision, step out to the nearest free spot

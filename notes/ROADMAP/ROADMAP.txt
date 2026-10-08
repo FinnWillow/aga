@@ -42,7 +42,7 @@
   - [x] Game states: playing / paused / menu / inventory / journal / dead (S)
   - [x] Debug tools: debug menu (F1) with per-object registration, palette editor, rm_sandbox, collision outlines. Spawn keys, god mode,
   hitbox view, give-item keys come with Phase 2
-  - [ ] Stats: health / stamina / exhaustion as one reusable component for the player and enemies (drain, max; only
+  - [x] Stats: health / stamina / exhaustion as one reusable component for the player and enemies (drain, max; only
   stamina regenerates) (S)
   - [ ] Dodge / dash: costs stamina, i-frames, can't be spammed (S)
   - [ ] Game clock: in-game time, day/night tint, skip-to hook for sleeping, day length as a debug slider (S)

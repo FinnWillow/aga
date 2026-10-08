@@ -14,8 +14,8 @@
     "path":"folders/Objects.yy",
   },
   "parentObjectId":{
-    "name":"obj_sorted",
-    "path":"objects/obj_sorted/obj_sorted.yy",
+    "name":"obj_armature",
+    "path":"objects/obj_armature/obj_armature.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

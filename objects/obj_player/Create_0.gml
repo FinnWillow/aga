@@ -1,3 +1,6 @@
+event_inherited()
+stats.move_speed = 2;
+
 coord = new Vector2(x, y)
 move_dir = new Vector2(0, 0)
 move_spd = new Vector2(0, 0)
@@ -15,8 +18,8 @@ obj_camera.target = id
 obj_camera.snap = true
 
 // -------- debug
+armat_create_debug("Player Stats")
 debug_target(id)
-debug_add("Player", "move_speed", DBG.SLIDER_INT, 1, 8)
 debug_add("Player", "x", DBG.WATCH)
 debug_add("Player", "y", DBG.WATCH)
 
